@@ -114,16 +114,20 @@
   .banner{position:relative; overflow:hidden;}
   .banner-bg{
     position:absolute;
-    inset:0;
+    top:0; left:0; right:0; bottom:0;
     width:100%;
     height:100%;
     object-fit:cover;
-    opacity:0.14;
     z-index:0;
     pointer-events:none;
   }
-  .hero .banner-bg{opacity:0.20; object-position:78% 30%;}
-  .banner-content{position:relative; z-index:1;}
+  .hero .banner-bg{object-position:78% 30%;}
+  .scrim{position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; pointer-events:none;}
+  .scrim.right{background:linear-gradient(to right, rgba(250,249,245,0) 0%, rgba(250,249,245,0.25) 32%, rgba(250,249,245,0.88) 62%, rgba(250,249,245,0.97) 100%);}
+  .scrim.left{background:linear-gradient(to left, rgba(250,249,245,0) 0%, rgba(250,249,245,0.25) 32%, rgba(250,249,245,0.88) 62%, rgba(250,249,245,0.97) 100%);}
+  .banner-content{position:relative; z-index:2; display:flex;}
+  .banner.align-right .banner-content{justify-content:flex-end;}
+  .text-box{max-width:540px;}
 
   /* services */
   .services{display:flex; flex-direction:column;}
@@ -181,6 +185,9 @@
     .service{grid-template-columns:1fr; gap:6px;}
     nav{gap:14px;}
     .hero{padding:44px 0 40px;}
+    .banner-content{justify-content:flex-start;}
+    .text-box{max-width:100%;}
+    .scrim.left, .scrim.right{background:rgba(250,249,245,0.88);}
   }
 </style>
 </head>
@@ -203,7 +210,9 @@
 
   <section class="banner hero">
     <img class="banner-bg" src="images/01-hero-operations.jpg" alt="Manager checking a tablet on the floor of a restaurant kitchen">
+    <div class="scrim left"></div>
     <div class="wrap banner-content">
+      <div class="text-box">
         <p class="kicker">Hospitality operations consulting, Melbourne</p>
         <h1>Labour and stock are where hospitality venues lose the most, quietly.</h1>
         <p class="lead">I work with independent venues to find where labour hours and COGS are being spent without return, then build a plan to fix it. No retainers to start, no jargon, just numbers and an action plan.</p>
@@ -220,20 +229,26 @@
           </ul>
         </div>
       </div>
+    </div>
   </section>
 
-  <section class="banner" id="approach">
+  <section class="banner align-right" id="approach">
     <img class="banner-bg" src="images/02-about-restaurant.jpg" alt="Sunlit venue seating area with plants and timber furniture">
+    <div class="scrim right"></div>
     <div class="wrap banner-content">
+      <div class="text-box">
         <h2 class="section-title">How I work</h2>
         <p>Most independent venues are watching sales closely and their cost lines loosely. Labour drifts above roster targets during quiet shifts, stock gets ordered on habit rather than actual usage, and small leakage in COGS goes unnoticed until it shows up in the P&amp;L months later.</p>
         <p class="soft">I come at this from the floor, not a spreadsheet. Years managing large-format retail and hospitality sites means the recommendations are things a duty manager can actually run on a Saturday night, not a theory that only works on paper. Every engagement ends with a written action plan, not a slide deck.</p>
       </div>
+    </div>
   </section>
 
   <section class="banner" id="services">
     <img class="banner-bg" src="images/03-services-planning.jpg" alt="Notebook, pen and coffee on a wooden table, ready for planning">
+    <div class="scrim left"></div>
     <div class="wrap banner-content">
+      <div class="text-box">
         <h2 class="section-title">Services</h2>
         <div class="services">
           <div class="service">
@@ -259,11 +274,14 @@
         </div>
         <p class="soft" style="margin-top:18px; font-size:15px;">Pricing and scope are confirmed together before anything starts. Get in touch for the full service menu.</p>
       </div>
+    </div>
   </section>
 
-  <section class="banner" id="process">
+  <section class="banner align-right" id="process">
     <img class="banner-bg" src="images/04-case-studies-performance.jpg" alt="Clipboard with cost and performance charts on a wooden table">
+    <div class="scrim right"></div>
     <div class="wrap banner-content">
+      <div class="text-box">
         <h2 class="section-title">What happens after you reach out</h2>
         <div class="process">
           <div class="step">
@@ -280,20 +298,26 @@
           </div>
         </div>
       </div>
+    </div>
   </section>
 
   <section class="banner" id="reviews">
     <img class="banner-bg" src="images/05-free-operations-audit.jpg" alt="Two chefs working the line in a commercial kitchen">
+    <div class="scrim left"></div>
     <div class="wrap banner-content">
+      <div class="text-box">
         <h2 class="section-title">Reviews</h2>
         <p class="soft" id="reviews-placeholder">Google reviews will go here once connected.</p>
         <div class="review-list" id="review-list"></div>
       </div>
+    </div>
   </section>
 
-  <section class="banner" id="contact">
+  <section class="banner align-right" id="contact">
     <img class="banner-bg" src="images/06-work-with-jack.jpg" alt="Handshake between two people">
+    <div class="scrim right"></div>
     <div class="wrap banner-content">
+      <div class="text-box">
         <div class="contact-box">
           <h2 class="section-title">Get in touch</h2>
           <p style="margin-bottom:0;">If any of this sounds like your venue, the first conversation is free and there's no pressure attached to it.</p>
@@ -303,6 +327,7 @@
           </div>
         </div>
       </div>
+    </div>
   </section>
 
 </main>
