@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jack Sephton — Hospitality Operations Consulting</title>
+<meta name="description" content="Jack Sephton helps independent hospitality venues fix labour costs and stock control, with a clear audit and action plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F2A44;
+    --green:#2F5D3A;
+    --green-tint:#EAF0E9;
+    --paper:#FAF9F5;
+    --ink:#2A2C27;
+    --ink-soft:#5B5D55;
+    --line:#DCDACD;
+    --max:760px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  a{color:var(--green);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--green); outline-offset:3px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* header */
+  header{
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .mark{font-family:'Fraunces', serif; font-weight:600; font-size:19px; color:var(--navy); text-decoration:none; letter-spacing:0.2px;}
+  nav{display:flex; gap:22px; flex-wrap:wrap;}
+  nav a{color:var(--ink-soft); text-decoration:none; font-size:14.5px; margin-right:22px;}
+  nav a:last-child{margin-right:0;}
+  nav a:hover{color:var(--green);}
+
+  /* hero */
+  .hero{padding:64px 0 56px;}
+  .hero-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:44px; align-items:start;}
+  .kicker{color:var(--green); font-size:15px; font-weight:500; margin:0 0 14px;}
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:44px;
+    line-height:1.16;
+    color:var(--navy);
+    margin:0 0 22px;
+    max-width:15ch;
+  }
+
+  .hero p.lead{font-size:18px; color:var(--ink-soft); max-width:52ch; margin:0 0 28px;}
+
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    border-radius:3px;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-primary:hover{background:#141c30;}
+  .btn-secondary{border-color:var(--line); color:var(--ink);}
+  .btn-secondary:hover{border-color:var(--green); color:var(--green);}
+
+  .focus-list{border-top:1px solid var(--line); padding-top:20px; margin-top:6px;}
+  .focus-list h2{font-size:13px; text-transform:none; color:var(--ink-soft); font-weight:500; margin:0 0 14px;}
+  .focus-list ul{list-style:none; margin:0; padding:0;}
+  .focus-list li{
+    border-left:2px solid var(--green);
+    padding:2px 0 2px 14px;
+    margin-bottom:14px;
+    font-size:15px;
+  }
+  .focus-list li span{display:block; color:var(--ink-soft); font-size:13.5px; margin-top:2px;}
+
+  /* section rhythm */
+  section{padding:52px 0;}
+  section + section{border-top:1px solid var(--line);}
+  h2.section-title{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:27px;
+    color:var(--navy);
+    margin:0 0 20px;
+  }
+  section p{max-width:66ch; color:var(--ink);}
+  section p.soft{color:var(--ink-soft);}
+
+  /* image / text split rows */
+  .split{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+  }
+  .split-img, .split-content{flex:1 1 0; min-width:0;}
+  .split.reverse{flex-direction:row-reverse;}
+  .split-img img{
+    width:100%;
+    aspect-ratio:4/3;
+    object-fit:cover;
+    display:block;
+    border-radius:3px;
+  }
+  .hero .split-img img{aspect-ratio:3/4; object-position:78% 30%;}
+  .split-content .section-title{margin-top:0;}
+
+  /* services */
+  .services{display:flex; flex-direction:column;}
+  .service{
+    padding:16px 0;
+    border-top:1px solid var(--line);
+  }
+  .service:last-child{border-bottom:1px solid var(--line);}
+  .service h3{margin:0 0 4px; font-size:16.5px; font-weight:600; color:var(--navy);}
+  .service p{margin:0; color:var(--ink-soft); font-size:15px; max-width:52ch;}
+
+  /* process */
+  .process{display:flex; flex-direction:column; gap:0;}
+  .step{display:grid; grid-template-columns:44px 1fr; gap:16px; padding:18px 0;}
+  .step-num{
+    font-family:'Fraunces', serif;
+    color:var(--green);
+    font-size:20px;
+    font-weight:500;
+  }
+  .step h3{margin:0 0 4px; font-size:17px; color:var(--navy);}
+  .step p{margin:0; color:var(--ink-soft); font-size:15.5px;}
+
+  /* background */
+  .bg-grid{display:grid; grid-template-columns:1fr; gap:8px;}
+  .bg-item{padding:14px 0 14px 16px; border-left:2px solid var(--line); margin-bottom:2px;}
+  .bg-item strong{color:var(--navy); display:block; font-size:15.5px;}
+  .bg-item span{color:var(--ink-soft); font-size:14.5px;}
+
+  /* contact */
+  .contact-box{
+    background:var(--green-tint);
+    padding:34px 30px;
+    border-radius:4px;
+  }
+  .contact-box h2{margin-top:0;}
+  .contact-links{display:flex; gap:22px; flex-wrap:wrap; margin-top:18px;}
+  .contact-links a{
+    font-weight:500;
+    text-decoration:none;
+    color:var(--navy);
+    border-bottom:1px solid var(--green);
+    padding-bottom:2px;
+    margin-right:22px;
+  }
+  .contact-links a:last-child{margin-right:0;}
+  .contact-links a:hover{color:var(--green);}
+
+  footer{padding:30px 0 50px; color:var(--ink-soft); font-size:13.5px;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
+  .footer-inner img{width:110px; height:auto; border-radius:2px; display:block;}
+
+  @media (max-width:720px){
+    h1{font-size:32px; max-width:none;}
+    .split, .split.reverse{flex-direction:column; gap:22px;}
+    .service{grid-template-columns:1fr; gap:6px;}
+    nav{gap:14px;}
+    .hero{padding:44px 0 40px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="#top">Jack Sephton</a>
+    <nav>
+      <a href="#approach">Approach</a>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap split">
+      <div class="split-img">
+        <img src="images/hero_manager_tablet.jpg" alt="Manager checking a tablet on the floor of a restaurant kitchen">
+      </div>
+      <div class="split-content">
+        <p class="kicker">Hospitality operations consulting, Melbourne</p>
+        <h1>Labour and stock are where hospitality venues lose the most, quietly.</h1>
+        <p class="lead">I work with independent venues to find where labour hours and COGS are being spent without return, then build a plan to fix it. No retainers to start, no jargon, just numbers and an action plan.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="mailto:jack.sephton@outlook.com">Book a free health check</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/jacksephton-in/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        </div>
+        <div class="focus-list">
+          <h2>Where I focus</h2>
+          <ul>
+            <li>Labour cost<span>Rostering against demand, not habit</span></li>
+            <li>COGS<span>Wastage, leakage, and over-ordering</span></li>
+            <li>Operations<span>SOPs that hold up during a rush</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap split reverse">
+      <div class="split-img">
+        <img src="images/venue_interior.jpg" alt="Sunlit venue seating area with plants and timber furniture">
+      </div>
+      <div class="split-content">
+        <h2 class="section-title">How I work</h2>
+        <p>Most independent venues are watching sales closely and their cost lines loosely. Labour drifts above roster targets during quiet shifts, stock gets ordered on habit rather than actual usage, and small leakage in COGS goes unnoticed until it shows up in the P&amp;L months later.</p>
+        <p class="soft">I come at this from the floor, not a spreadsheet. Years managing large-format retail and hospitality sites means the recommendations are things a duty manager can actually run on a Saturday night, not a theory that only works on paper. Every engagement ends with a written action plan, not a slide deck.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap split">
+      <div class="split-img">
+        <img src="images/notebook_pen.jpg" alt="Notebook, pen and coffee on a wooden table, ready for planning">
+      </div>
+      <div class="split-content">
+        <h2 class="section-title">Services</h2>
+        <div class="services">
+          <div class="service">
+            <h3>Health check</h3>
+            <p>A free 30 minute consult to talk through what's happening on your floor and whether an audit is worth your time.</p>
+          </div>
+          <div class="service">
+            <h3>Labour audit</h3>
+            <p>Peak periods identified, labour structure reviewed against demand, and an action plan for what to change.</p>
+          </div>
+          <div class="service">
+            <h3>COGS audit</h3>
+            <p>A review of your COGS plan and wastage, with over and underusage (including leakage) identified and addressed.</p>
+          </div>
+          <div class="service">
+            <h3>Operations audit</h3>
+            <p>Operations flow and SOPs reviewed, with any major gaps built and implemented.</p>
+          </div>
+          <div class="service">
+            <h3>Ongoing support</h3>
+            <p>A monthly arrangement with scheduled check-ins to track targets once the initial plan is in motion.</p>
+          </div>
+        </div>
+        <p class="soft" style="margin-top:18px; font-size:15px;">Pricing and scope are confirmed together before anything starts. Get in touch for the full service menu.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="wrap split reverse">
+      <div class="split-img">
+        <img src="images/clipboard_charts.jpg" alt="Clipboard with cost and performance charts on a wooden table">
+      </div>
+      <div class="split-content">
+        <h2 class="section-title">What happens after you reach out</h2>
+        <div class="process">
+          <div class="step">
+            <span class="step-num">1</span>
+            <div><h3>Free health check</h3><p>A 30 minute conversation about your venue, no cost or commitment attached.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-num">2</span>
+            <div><h3>Audit and action plan</h3><p>I review labour, COGS, or operations (whichever fits) and hand you a written plan with specific fixes.</p></div>
+          </div>
+          <div class="step">
+            <span class="step-num">3</span>
+            <div><h3>Ongoing support, if useful</h3><p>Some venues want scheduled check-ins after the plan is running. Others just run with it. Both are fine.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="wrap split">
+      <div class="split-img">
+        <img src="images/chefs_cooking.jpg" alt="Two chefs working the line in a commercial kitchen">
+      </div>
+      <div class="split-content">
+        <h2 class="section-title">Reviews</h2>
+        <p class="soft" id="reviews-placeholder">Google reviews will go here once connected.</p>
+        <div class="review-list" id="review-list"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap split reverse">
+      <div class="split-img">
+        <img src="images/handshake.jpg" alt="Handshake between two people">
+      </div>
+      <div class="split-content">
+        <div class="contact-box">
+          <h2 class="section-title">Get in touch</h2>
+          <p style="margin-bottom:0;">If any of this sounds like your venue, the first conversation is free and there's no pressure attached to it.</p>
+          <div class="contact-links">
+            <a href="mailto:jack.sephton@outlook.com">jack.sephton@outlook.com</a>
+            <a href="https://www.linkedin.com/in/jacksephton-in/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Jack Sephton, Hospitality Operations Consulting. ABN 34 626 845 424.</span>
+    <img src="images/business_card.jpg" alt="Business card on a dark surface">
+  </div>
+</footer>
+
+</body>
+</html>
