@@ -106,6 +106,8 @@
   .guide-card p{color:var(--ink-soft); font-size:15px; margin:0 0 20px; flex-grow:1;}
   .guide-card .btn{align-self:flex-start;}
 
+  .loading-msg{color:var(--ink-soft); font-size:15px; grid-column:1 / -1;}
+
   .more-soon{
     border:1px dashed var(--line);
     border-radius:6px;
@@ -154,22 +156,63 @@
 
   <section class="guides">
     <div class="wrap">
-      <div class="guide-grid">
-
-        <div class="guide-card">
-          <p class="guide-tag">Hiring</p>
-          <h2>A Tactical Guide to Hiring</h2>
-          <p>Hiring is risk management, not talent-spotting. This guide breaks down how managers actually weigh risk when they hire, and what that means whether you're building a team or trying to get picked for one.</p>
-          <a class="btn btn-primary" href="downloads/a-tactical-guide-to-hiring.pdf" download>Download the PDF</a>
-        </div>
-
-        <div class="more-soon">More guides coming soon.</div>
-
+      <div class="guide-grid" id="guide-grid">
+        <p class="loading-msg">Loading guides…</p>
       </div>
     </div>
   </section>
 
 </main>
+
+<script>
+  (function () {
+    var grid = document.getElementById('guide-grid');
+
+    function escapeHtml(str) {
+      var div = document.createElement('div');
+      div.textContent = str == null ? '' : str;
+      return div.innerHTML;
+    }
+
+    function render(guides) {
+      grid.innerHTML = '';
+
+      if (!Array.isArray(guides) || guides.length === 0) {
+        var empty = document.createElement('div');
+        empty.className = 'more-soon';
+        empty.textContent = 'No guides published yet. Check back soon.';
+        grid.appendChild(empty);
+        return;
+      }
+
+      guides.forEach(function (g) {
+        var card = document.createElement('div');
+        card.className = 'guide-card';
+        card.innerHTML =
+          '<p class="guide-tag">' + escapeHtml(g.tag) + '</p>' +
+          '<h2>' + escapeHtml(g.title) + '</h2>' +
+          '<p>' + escapeHtml(g.blurb) + '</p>' +
+          '<a class="btn btn-primary" href="' + encodeURI(g.file) + '" download>Download the PDF</a>';
+        grid.appendChild(card);
+      });
+
+      var more = document.createElement('div');
+      more.className = 'more-soon';
+      more.textContent = 'More guides coming soon.';
+      grid.appendChild(more);
+    }
+
+    fetch('guides.json', { cache: 'no-store' })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Could not load guides.json');
+        return res.json();
+      })
+      .then(render)
+      .catch(function () {
+        grid.innerHTML = '<p class="loading-msg">Guides could not be loaded right now. Please refresh, or check back shortly.</p>';
+      });
+  })();
+</script>
 
 <footer>
   <div class="wrap footer-inner">
