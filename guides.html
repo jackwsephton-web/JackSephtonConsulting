@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Guides — Jack Sephton</title>
+<meta name="description" content="Free downloadable guides from Jack Sephton on hiring, hospitality operations, labour and COGS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1F2A44;
+    --green:#2F5D3A;
+    --green-tint:#EAF0E9;
+    --paper:#FAF9F5;
+    --ink:#2A2C27;
+    --ink-soft:#5B5D55;
+    --line:#DCDACD;
+    --max:1160px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', -apple-system, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  a{color:var(--green);}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--green); outline-offset:3px;}
+
+  .wrap{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+  /* header */
+  header{
+    padding:26px 0;
+    border-bottom:1px solid var(--line);
+  }
+  header .wrap{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;}
+  .mark{font-family:'Fraunces', serif; font-weight:600; font-size:19px; color:var(--navy); text-decoration:none; letter-spacing:0.2px;}
+  nav{display:flex; gap:22px; flex-wrap:wrap;}
+  nav a{color:var(--ink-soft); text-decoration:none; font-size:14.5px; margin-right:22px;}
+  nav a:last-child{margin-right:0;}
+  nav a:hover{color:var(--green);}
+
+  .btn{
+    display:inline-block;
+    padding:12px 22px;
+    font-size:15px;
+    font-weight:500;
+    text-decoration:none;
+    border-radius:3px;
+    border:1px solid transparent;
+  }
+  .btn-primary{background:var(--navy); color:#fff;}
+  .btn-primary:hover{background:#141c30;}
+  .btn-secondary{border-color:var(--line); color:var(--ink);}
+  .btn-secondary:hover{border-color:var(--green); color:var(--green);}
+
+  /* page intro */
+  .intro{padding:56px 0 8px;}
+  .kicker{color:var(--green); font-size:15px; font-weight:500; margin:0 0 14px;}
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:38px;
+    line-height:1.16;
+    color:var(--navy);
+    margin:0 0 16px;
+    max-width:18ch;
+  }
+  .intro p.lead{font-size:17px; color:var(--ink-soft); max-width:60ch; margin:0;}
+
+  /* guides list */
+  .guides{padding:40px 0 72px;}
+  .guide-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:22px;}
+  .guide-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:26px 24px;
+    display:flex;
+    flex-direction:column;
+  }
+  .guide-tag{color:var(--green); font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:0.4px; margin:0 0 10px;}
+  .guide-card h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:21px;
+    color:var(--navy);
+    margin:0 0 10px;
+    line-height:1.3;
+  }
+  .guide-card p{color:var(--ink-soft); font-size:15px; margin:0 0 20px; flex-grow:1;}
+  .guide-card .btn{align-self:flex-start;}
+
+  .more-soon{
+    border:1px dashed var(--line);
+    border-radius:6px;
+    padding:26px 24px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--ink-soft);
+    font-size:14.5px;
+    text-align:center;
+  }
+
+  footer{padding:30px 0 50px; color:var(--ink-soft); font-size:13.5px;}
+  .footer-inner{display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap;}
+
+  @media (max-width:720px){
+    h1{font-size:30px; max-width:none;}
+    nav{gap:14px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="mark" href="index.html">Jack Sephton</a>
+    <nav>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#process">Process</a>
+      <a href="guides.html">Free guides</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="intro">
+    <div class="wrap">
+      <p class="kicker">Free resources</p>
+      <h1>Guides on hiring and hospitality operations</h1>
+      <p class="lead">Short, practical guides you can download and keep. No email required. More will be added here over time.</p>
+    </div>
+  </section>
+
+  <section class="guides">
+    <div class="wrap">
+      <div class="guide-grid">
+
+        <div class="guide-card">
+          <p class="guide-tag">Hiring</p>
+          <h2>A Tactical Guide to Hiring</h2>
+          <p>Hiring is risk management, not talent-spotting. This guide breaks down how managers actually weigh risk when they hire, and what that means whether you're building a team or trying to get picked for one.</p>
+          <a class="btn btn-primary" href="downloads/a-tactical-guide-to-hiring.pdf" download>Download the PDF</a>
+        </div>
+
+        <div class="more-soon">More guides coming soon.</div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>Jack Sephton, Hospitality Operations Consulting. ABN 34 626 845 424.</span>
+  </div>
+</footer>
+
+</body>
+</html>
